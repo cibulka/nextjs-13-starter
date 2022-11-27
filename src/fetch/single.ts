@@ -1,8 +1,9 @@
-import fs, { read } from 'fs';
+import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+
+import { removeExcerptFromContent } from 'src/helpers/removeExcerptFromContent';
 import { Post } from 'src/types';
-import { removeExcerptFromContent } from './removeExcerptFromContent';
 
 function readFile(filepathRelative: string) {
   const fileData = fs.readFileSync(filepathRelative, 'utf-8');
@@ -14,7 +15,7 @@ export function getMatterData(filepathRelative: string) {
   return fileData.data;
 }
 
-export function getContent(filepathRelative: string, keepExcerpt?: boolean) {
+export function getMdxContent(filepathRelative: string, keepExcerpt?: boolean) {
   const fileData = readFile(filepathRelative);
   let content = fileData.content;
   if (!keepExcerpt) {

@@ -1,13 +1,12 @@
 import remarkGfm from 'remark-gfm';
 import { serialize } from 'next-mdx-remote/serialize';
-
-import { getContent } from './getMdx';
+import { getMdxContent } from 'src/fetch/single';
 
 export default async function getContentSerialized(
   filepathRelative: string,
   keepExcerpt?: boolean,
 ) {
-  const content = getContent(filepathRelative, keepExcerpt);
+  const content = getMdxContent(filepathRelative, keepExcerpt);
   if (!content) return null;
 
   const serialized = await serialize(content, {

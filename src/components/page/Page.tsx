@@ -15,7 +15,7 @@ const Page = (props: {
   const translate = useTranslate(props.locale, localization);
 
   return (
-    <div className="cib-content max-w-lg">
+    <div className="cib-content max-w-lg w-full">
       {props.article ? (
         <>
           <h1 className="text-3xl font-bold mb-4">{props.article.title}</h1>
