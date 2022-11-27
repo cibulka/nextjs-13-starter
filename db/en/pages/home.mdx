@@ -1,0 +1,19 @@
+---
+title: Home page
+---
+
+import PostsList from 'src/components/posts-list/PostsList';
+
+This is my attempt to fix i18n with Next.js 13.
+
+---
+
+Next.js 13 is [undoubtedly very cool](https://nextjs.org/blog/next-13). My issue - i18n[^1] is gone. The previous versions [had nice support](https://nextjs.org/docs/advanced-features/i18n-routing) for this. Next.js 13 [seems to drop it](https://beta.nextjs.org/docs/app-directory-roadmap#not-planned-features).
+
+All of my projects are **multilingual**, so I need a solution for this. This starter project attempts that. It also works with MDX files (to cut the need for CMS). You can read more in the [README.MD](/en/readme).
+
+If you find it helpful, [feel free to use it](https://www.github.com/cibulka/nextjs-13-starter). :)
+
+[^1]: **Internationalization** (sometimes shortened to "I18N , meaning "I - eighteen letters -N") is process of making your app available in multiple languages.
+
+<PostsList locale="en" />

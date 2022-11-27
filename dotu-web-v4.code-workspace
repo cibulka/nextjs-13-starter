@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../dotu-web"
+	},
+	{
+		"path": "../dotu-ui"
+	}
+],
+  "settings": {}
+}

@@ -1,0 +1,18 @@
+module.exports = {
+  xxs: 380,
+  xxsMax: { max: 379 },
+  xs: 540,
+  xsMax: { max: 540 },
+  sm: 640,
+  smMax: { max: 639 },
+  md: 768,
+  mdMax: { max: 767 },
+  bg: 962,
+  bgMax: { max: 961 },
+  lg: 1024,
+  lgMax: { max: 1023 },
+  lx: 1180,
+  lxMax: { max: 1179 },
+  xl: 1280,
+  xlMax: { max: 1279 },
+};

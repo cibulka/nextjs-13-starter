@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Layout */
+
+html {
+  font-size: 20px;
+}
+@media screen(lg) {
+  html {
+    font-size: 21px !important;
+  }
+}
+@media screen(xl) {
+  html {
+    font-size: 22px !important;
+  }
+}
+
+body {
+  @apply text-text-primary;
+  @apply bg-background-default;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+[data-nextjs-scroll-focus-boundary] {
+  display: contents;
+}
+
+.cib-content h1 {
+  @apply text-3xl font-bold mb-4;
+}
+.cib-content p,
+.cib-content hr {
+  @apply mb-4;
+}
+.cib-content a {
+  @apply text-primary-main underline;
+}
+.cib-content sup {
+  @apply font-bold;
+  margin-left: 0.25em;
+}
+.cib-content sup a {
+  text-decoration: none;
+}
+.cib-content .footnotes {
+  @apply text-xs leading-normal;
+  @apply mt-4 pt-4;
+  @apply border-t border-border-main;
+}
+.cib-content .footnotes ol {
+  counter-reset: footnotes;
+}
+.cib-content .footnotes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  font-style: italic;
+}
+.cib-content .footnotes ol li:before {
+  counter-increment: footnotes;
+  content: counter(footnotes);
+  font-weight: bold;
+  font-style: normal;
+}
+.cib-content .footnotes h2 {
+  display: none;
+}
+.cib-content .footnotes li i,
+.cib-content .footnotes li em,
+.cib-content .footnotes li b,
+.cib-content .footnotes li strong {
+  font-style: normal;
+}
+
+/* Debug */
+.red,
+.undefined,
+.null,
+.false {
+  background: red !important;
+}
+.green {
+  background: green !important;
+}
+.blue {
+  background: blue !important;
+}
