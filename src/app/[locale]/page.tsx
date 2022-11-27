@@ -9,7 +9,7 @@ export default async function PageIndex(props: PageProps) {
   const { locale } = props.params;
 
   const path = `db/${locale}/pages/home.mdx`;
-  preventPurge(path);
+  preventPurge();
 
   const article = getMdx(path, locale);
   const content = await getContentSerialized(path);

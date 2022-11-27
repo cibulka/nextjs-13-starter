@@ -31,7 +31,7 @@ export function generateStaticParams() {
 export default async function PostPage(p: PagePostProps) {
   const { locale, slug } = p.params;
   const path = `db/${locale}/posts/${slug}.mdx`;
-  preventPurge(path);
+  preventPurge();
 
   const mdx = getMdx(path, getHref(locale, slug));
   const content = await getContentSerialized(path);

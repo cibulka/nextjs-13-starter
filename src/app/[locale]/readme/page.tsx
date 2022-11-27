@@ -8,8 +8,8 @@ import { Locale } from 'src/types';
 export default async function PageReadMe(props: { params: { locale: Locale } }) {
   const { locale } = props.params;
   const path = 'readme.md';
-
   preventPurge(path);
+
   const article = getMdx(path, '/readme.md');
   const content = await getContentSerialized(path);
 

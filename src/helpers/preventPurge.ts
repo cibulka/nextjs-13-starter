@@ -1,7 +1,12 @@
-import fs from 'fs';
 import path from 'path';
+import fs from 'fs';
 
-export default function preventPurge(...args: string[]) {
-  const p = path.join(process.cwd(), ...args);
-  console.log(fs.existsSync(p) ? `${p} exists` : `${p} does not exist`);
+export default function preventPurge(filepath?: string) {
+  try {
+    const file = filepath || path.join(process.cwd(), 'db', 'keep_me.yaml');
+    const data = fs.readFileSync(file, 'utf-8');
+    console.log(data);
+  } catch (e) {
+    console.error(e);
+  }
 }
