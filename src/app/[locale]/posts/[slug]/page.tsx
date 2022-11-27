@@ -9,7 +9,6 @@ import { getMdx } from 'src/fetch/single';
 import getContentSerialized from 'src/helpers/getContentSerialized';
 import { getHrefPost } from 'src/helpers/getHref';
 import { getPath } from 'src/helpers/getPath';
-import preventPurge from 'src/helpers/preventPurge';
 import LayoutLocale from 'src/server/layout-locale';
 import { Locale, PagePostProps } from 'src/types';
 
@@ -32,7 +31,6 @@ export function generateStaticParams() {
 export default async function PostPage(p: PagePostProps) {
   const { locale, slug } = p.params;
   const filePath = getPath(`db/${locale}/posts/${slug}.mdx`);
-  preventPurge();
 
   const mdx = getMdx(filePath, getHref(locale, slug));
   const content = await getContentSerialized(filePath);
