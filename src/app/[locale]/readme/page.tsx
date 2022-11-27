@@ -10,12 +10,12 @@ import { Locale } from 'src/types';
 
 export default async function PageReadMe(props: { params: { locale: Locale } }) {
   const { locale } = props.params;
-  const filepath = getPath('readme.md');
+  const filepath = getPath('README.md');
 
-  const p = path.resolve(process.cwd(), 'readme.md');
+  const p = path.resolve(process.cwd(), 'README.md');
   fs.readFileSync(p);
 
-  const article = getMdx(filepath, '/readme.md');
+  const article = getMdx(filepath, '/readme');
   const content = await getContentSerialized(filepath);
 
   return (
