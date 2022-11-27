@@ -10,6 +10,7 @@ import { Locale, PagePostProps } from 'src/types';
 import PostsList from 'src/components/posts-list/PostsList';
 import { getMdxMultiple } from 'src/fetch/multiple';
 import { getHrefPost } from 'src/helpers/getHref';
+import preventPurge from 'src/helpers/preventPurge';
 
 function getHref(locale: Locale, slug: string) {
   return `/${locale}/posts/${slug}`;
@@ -30,6 +31,7 @@ export function generateStaticParams() {
 export default async function PostPage(p: PagePostProps) {
   const { locale, slug } = p.params;
   const path = `db/${locale}/posts/${slug}.mdx`;
+  preventPurge(path);
 
   const mdx = getMdx(path, getHref(locale, slug));
   const content = await getContentSerialized(path);
