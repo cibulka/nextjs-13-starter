@@ -1,3 +1,5 @@
+import path from 'path';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -10,6 +12,7 @@ const nextConfig = {
         options: { subsets: ['latin-ext', 'cyrillic'] } 
       },
     ],
+    disableOptimizedLoading: true,
   },
   webpack(config) {
     config.module.rules.push({
