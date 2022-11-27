@@ -1,6 +1,7 @@
 import Page from 'src/components/page/Page';
 import { getMdx } from 'src/fetch/single';
 import getContentSerialized from 'src/helpers/getContentSerialized';
+import { getPath } from 'src/helpers/getPath';
 import preventPurge from 'src/helpers/preventPurge';
 import LayoutLocale from 'src/server/layout-locale';
 import { PageProps } from 'src/types';
@@ -8,7 +9,7 @@ import { PageProps } from 'src/types';
 export default async function PageIndex(props: PageProps) {
   const { locale } = props.params;
 
-  const path = `db/${locale}/pages/home.mdx`;
+  const path = getPath(`db/${locale}/pages/home.mdx`);
   preventPurge();
 
   const article = getMdx(path, locale);
