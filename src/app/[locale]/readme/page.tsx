@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 import Page from 'src/components/page/Page';
 import { getMdx } from 'src/fetch/single';
 import getContentSerialized from 'src/helpers/getContentSerialized';
@@ -7,10 +10,13 @@ import { Locale } from 'src/types';
 
 export default async function PageReadMe(props: { params: { locale: Locale } }) {
   const { locale } = props.params;
-  const path = getPath('readme.md');
+  const filepath = getPath('readme.md');
 
-  const article = getMdx(path, '/readme.md');
-  const content = await getContentSerialized(path);
+  const p = path.resolve(process.cwd(), 'readme.md');
+  fs.readFileSync(p);
+
+  const article = getMdx(filepath, '/readme.md');
+  const content = await getContentSerialized(filepath);
 
   return (
     <LayoutLocale locale={locale}>
